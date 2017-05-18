@@ -11,19 +11,18 @@
     "babel-preset-stage-1": "^6.22.0",
     "moment": "^2.18.1",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
-  },
-  "devDependencies": {
+    "react-dom": "^15.4.2",
     "css-loader": "^0.28.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "html-webpack-plugin": "^2.28.0",
     "node-sass": "^4.5.2",
     "prop-types": "^15.5.8",
     "sass-loader": "^6.0.3",
-    "webpack-dev-server": "^2.4.2"
+    "webpack": "^2.5.1"
   },
   "scripts": {
-    "dev": "webpack --watch --progress"
+    "dev": "webpack --watch --progress",
+    "build": "webpack"
   },
   "keywords": [
     "react",
