@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -15,7 +16,9 @@ module.exports = {
 		alias: {
 			'components': path.resolve('src/client/components'),
 			'server': path.resolve('src/server'),
-		}
+			'styles': path.resolve('src/client/styles'),
+		},
+		extensions: ['.js', 'scss'],
 	},
 	module: {
 		rules: [
@@ -27,6 +30,21 @@ module.exports = {
 						loader: 'babel-loader',
 					}
 				]
+			},
+			{
+				test: /\.scss$/,
+				exclude: [/node_modules/],
+				use: ExtractTextPlugin.extract([{
+					loader: 'css-loader',
+					options: {
+						modules: true,
+						sourceMap: true,
+						importLoader: 1,
+						localIdentName: '[name]__[local]___[hash:base64:5]'
+					}	
+				}, {
+					loader: 'sass-loader',
+				}]),
 			},
 		],
 	},
@@ -40,6 +58,9 @@ module.exports = {
 		new webpack.ProvidePlugin({
 			'React': 'react',
 			'PropTypes': 'prop-types',
+		}),
+		new ExtractTextPlugin({
+			filename: 'styles.css',
 		}),
 	],
 };

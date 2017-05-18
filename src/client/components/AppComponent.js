@@ -1,7 +1,9 @@
+import S from 'styles/app.scss';
+
 export default class AppComponent extends React.PureComponent {
 	render() {
 		return (
-			<div>Imma Application</div>
+			<div className={S.app}>Imma Application</div>
 		);
 	}
 }
