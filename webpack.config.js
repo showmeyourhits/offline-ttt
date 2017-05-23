@@ -5,7 +5,7 @@ const webpack = require('webpack');
 
 module.exports = {
 	entry: {
-		server: path.resolve('src/server/server.js'),
+		// server: path.resolve('src/server/server.js'),
 		client: path.resolve('src/client/app.js'),
 	},
 	output: {
@@ -16,9 +16,10 @@ module.exports = {
 		alias: {
 			'components': path.resolve('src/client/components'),
 			'server': path.resolve('src/server'),
+			'helpers$': path.resolve('src/client/helpers/helpers.js'),
 			'styles': path.resolve('src/client/styles'),
 		},
-		extensions: ['.js', 'scss'],
+		extensions: ['.js', '.scss'],
 	},
 	module: {
 		rules: [

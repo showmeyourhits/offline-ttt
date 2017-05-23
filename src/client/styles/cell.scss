@@ -1,0 +1,12 @@
+.cell {
+	box-sizing: border-box;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+
+	border: 3px dashed black;
+	min-width: calc(100% / 3);
+	min-height: calc(100% / 3);
+	max-width: calc(100% / 3);
+	max-height: calc(100% / 3);
+}
