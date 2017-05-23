@@ -14,9 +14,11 @@ export default class Field extends React.PureComponent {
 	render() {
 		const {cells} = this.state;
 
-		return <div className={S.field}>
-			{cells.map(cell =>
-				<FieldCell cell={cell} key={cell.id} onClick={this.handleCellClick}/>)}
+		return <div className={S['field-wrapper']}>
+			<div className={S.field}>
+				{cells.map(cell =>
+					<FieldCell cell={cell} key={cell.id} onClick={this.handleCellClick}/>)}
+			</div>
 		</div>
 	}
 }
