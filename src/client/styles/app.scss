@@ -1,4 +1,17 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	padding: 0px;
+	margin: 0px;
+}
+
 .app {
-	font-size: 3rem;
-	color: red;
+	height: 100%;
+	display: flex;
+	flex-flow: column;
+	justify-content: flex-start;
+	align-content: stretch;
+	background-color: #ccffff;
 }

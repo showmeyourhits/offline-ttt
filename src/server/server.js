@@ -13,4 +13,4 @@ app.get('/', (req, res) => {
 	res.sendFile(path.resolve(distPath, 'index.html'));
 })
 app.listen(3456);
-console.log('listens');
+console.log('listens to connections');

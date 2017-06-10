@@ -21,9 +21,9 @@ export default class FieldCell extends React.PureComponent {
 	static renderCellIcon = (value) => {
 		switch (value) {
 			case 'x':
-				return <CircleIcon />;
+				return <CloseIcon size={50} />;
 			case 'o':
-				return <CloseIcon />;
+				return <CircleIcon size={50} />;
 			default:
 				return null;
 		}
@@ -41,8 +41,10 @@ export default class FieldCell extends React.PureComponent {
 		const {cell} = this.props;
 
 		return (
-			<div className={S.cell} onClick={this.handleClick}>
-				{this.constructor.renderCellIcon(cell.value)}
+			<div className={`${S.cell} ${S[`cell-${cell.value}`]}`} onClick={this.handleClick}>
+				<span className={S.icon_wrap} style={{transform: 'scale(calc((100vh / 4) / 50px)'}}>
+					{this.constructor.renderCellIcon(cell.value)}
+				</span>
 			</div>);
 	} 
 }

@@ -1,47 +1,17 @@
-@mixin aspect-ratio($width, $height) {
-    position: relative;
-    &:before{
-        display: block;
-        content: " ";
-        width: 100%;
-        padding-top: ($height / $width) * 100%;
-    }
-
-    > .content {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-    }
-}
-
-
 .field {
 	&-wrapper {
-    	position: relative;
-		width: 80vw;
-		max-width: 80vh;
-		margin: auto;
-		&:before{
-			display: block;
-			content: " ";
-			width: 100%;
-			padding-top: 100%;
-		}
-		& > .field {
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
+		padding: 10px;
+		flex-grow: 1;
+		display: flex;
+	}
+	display: flex;
+	flex-flow: column;
+	flex-grow: 1;
+	&-row {
+		display: flex;
+		flex: 1 0;
+		&:not(:last-child) {
+			border-bottom: 20px solid #336633;
 		}
 	}
-
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	border: 1px solid red;
-
-
 }

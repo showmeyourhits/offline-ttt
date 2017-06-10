@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 
@@ -16,7 +17,7 @@ module.exports = {
 		alias: {
 			'components': path.resolve('src/client/components'),
 			'server': path.resolve('src/server'),
-			'helpers$': path.resolve('src/client/helpers/helpers.js'),
+			'helpers': path.resolve('src/client/helpers'),
 			'styles': path.resolve('src/client/styles'),
 		},
 		extensions: ['.js', '.scss'],
@@ -44,7 +45,7 @@ module.exports = {
 						localIdentName: '[name]__[local]___[hash:base64:5]'
 					}	
 				}, {
-					loader: 'sass-loader',
+					loader: 'postcss-loader',
 				}]),
 			},
 		],
@@ -63,5 +64,8 @@ module.exports = {
 		new ExtractTextPlugin({
 			filename: 'styles.css',
 		}),
+		new CopyWebpackPlugin([
+			{from: path.resolve('src/client/ttt_sw.js'), to: path.resolve('build')}
+		]),
 	],
 };

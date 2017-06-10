@@ -22,7 +22,7 @@
   },
   "scripts": {
     "dev": "webpack --watch --progress",
-    "server": "node src/server/server.js",
+    "server": "nodemon src/server/server.js --config src/server/nodemon.json",
     "build": "webpack"
   },
   "keywords": [
@@ -32,8 +32,12 @@
   "author": "smile4tme@gmail.com",
   "license": "ISC",
   "devDependencies": {
+    "copy-webpack-plugin": "^4.0.1",
     "express": "^4.15.3",
     "html-webpack-plugin": "^2.28.0",
+    "postcss-loader": "^2.0.5",
+    "postcss-scss": "^1.0.0",
+    "precss": "^1.4.0",
     "react-icons": "^2.2.5"
   }
 }

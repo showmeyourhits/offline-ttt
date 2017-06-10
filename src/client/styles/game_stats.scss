@@ -1,0 +1,26 @@
+.game_stats {
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 1.5rem;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2rem;
+	padding: 10px;
+}
+
+.names {
+	display: flex;
+	justify-content: center;
+	flex: 1;
+}
+.name {
+	&_x {
+		color: #993300;
+	}
+	&_o {
+		color: #330066;
+	}
+}
+.vs {
+	margin: 0px 10px;
+}
