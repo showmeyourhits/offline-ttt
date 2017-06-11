@@ -1,7 +1,7 @@
 let worker = null;
 
 if (window.Worker) {
-	worker = new Worker("ttt_sw.js");
+	worker = new Worker("logic_worker.js");
 }
 
 export default worker;

@@ -1,6 +1,5 @@
 const possibleValues = ['x', 'o', null];
 
-
 export const getRandomValue = () => {
 	return possibleValues[Math.round(Math.random()*10000) % possibleValues.length];
 }

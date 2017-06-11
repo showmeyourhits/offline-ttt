@@ -1,16 +1,19 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
+const buildPath = path.resolve('build');
 
 module.exports = {
 	entry: {
 		// server: path.resolve('src/server/server.js'),
 		client: path.resolve('src/client/app.js'),
+		logic_worker: path.resolve('src/client/helpers/logic_worker.js'),
 	},
 	output: {
-		path: path.resolve('build'),
+		path: buildPath,
 		filename: '[name].js'
 	},
 	resolve: {
@@ -18,6 +21,7 @@ module.exports = {
 			'components': path.resolve('src/client/components'),
 			'server': path.resolve('src/server'),
 			'helpers': path.resolve('src/client/helpers'),
+			'constants': path.resolve('src/client/constants'),
 			'styles': path.resolve('src/client/styles'),
 		},
 		extensions: ['.js', '.scss'],
@@ -64,8 +68,6 @@ module.exports = {
 		new ExtractTextPlugin({
 			filename: 'styles.css',
 		}),
-		new CopyWebpackPlugin([
-			{from: path.resolve('src/client/ttt_sw.js'), to: path.resolve('build')}
-		]),
+		new CleanWebpackPlugin([buildPath]),
 	],
 };

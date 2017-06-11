@@ -1,0 +1,22 @@
+.animation-slide {
+	&-enter {
+		transform: translateX(100vw);
+		position: absolute;
+		height: 100vh;
+		width: 100vw;
+		&.animation-slide-enter-active {
+			transform: translateX(0px);
+			transition: transform .3s ease-in;
+		}
+	}
+	&-leave {
+		position: absolute;
+		height: 100vh;
+		width: 100vw;
+		transform: translateX(0px);
+		&.animation-slide-leave-active {
+			transform: translateX(-100vh);
+			transition: transform .3s ease-in;
+		}
+	}
+}
