@@ -1,3 +1,5 @@
+// @flow
+// $FlowFixMe
 import Anims from 'styles/animations';
 
 export const AppSteps = {

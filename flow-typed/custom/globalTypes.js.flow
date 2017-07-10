@@ -1,0 +1,12 @@
+// @flow
+
+declare type CellValueT = 'x' | 'o' | null;
+
+declare type CellT = {
+	+id: number,
+	value: CellValueT,
+};
+
+declare type AppStateT = {|
+	+currentStep: string,
+|}

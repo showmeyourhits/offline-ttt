@@ -18,11 +18,7 @@ module.exports = {
 	},
 	resolve: {
 		alias: {
-			'components': path.resolve('src/client/components'),
-			'server': path.resolve('src/server'),
-			'helpers': path.resolve('src/client/helpers'),
-			'constants': path.resolve('src/client/constants'),
-			'styles': path.resolve('src/client/styles'),
+			'src': path.resolve('src'),
 		},
 		extensions: ['.js', '.scss'],
 	},
