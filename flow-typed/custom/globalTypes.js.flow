@@ -10,3 +10,7 @@ declare type CellT = {
 declare type AppStateT = {|
 	+currentStep: string,
 |}
+
+declare module CSSModule {
+	declare var exports: { [key: string]: string };
+}

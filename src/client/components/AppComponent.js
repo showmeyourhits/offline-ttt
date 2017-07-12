@@ -1,14 +1,19 @@
+// @flow
+
+import React from 'react';
 import {CSSTransitionGroup} from 'react-transition-group';
-import {AppSteps, transitionAppSlide} from 'constants/AppConstants';
-import S from 'styles/app'
-import Start from 'components/Start';
-import OpponentPick from 'components/OpponentPick';
-import GameStats from 'components/GameStats';
-import Field from 'components/Field';
-import {getStartField} from 'helpers/helpers';
-import worker from 'helpers/workerHelpers';
+import {AppSteps, transitionAppSlide} from 'client/constants/AppConstants';
+import S from 'styles/app';
+import Start from 'client/components/Start';
+import OpponentPick from 'client/components/OpponentPick';
+import GameStats from 'client/components/GameStats';
+import Field from 'client/components/Field';
+import {getStartField} from 'client/helpers/helpers';
+import worker from 'client/helpers/workerHelpers';
 
 export default class AppComponent extends React.PureComponent {
+	
+
 	state = {
 		cells: getStartField(),
 		step: AppSteps.start,

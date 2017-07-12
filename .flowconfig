@@ -7,4 +7,6 @@
 [libs]
 
 [options]
-module.name_mapper='^src\(.*\)$' -> '<PROJECT_ROOT>/src/\1'
+module.name_mapper='^client\(.*\)$' -> '<PROJECT_ROOT>/src/client/\1'
+module.name_mapper='^styles\(.*\)$' -> 'CSSModule'
+module.system=haste
